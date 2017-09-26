@@ -1,0 +1,13 @@
+<h4>Notes List</h4>
+<div class="main">
+
+  <div *ngFor= "let note of notes">
+      <p>{{note.note | uppercase}}</p>
+      <p>{{note.createdAt | date:'medium' }}</p>
+
+      <button type="button" name="delete" (click)='destroy(note)'>Delete</button>
+    <button type="button" name="update" (click)='note.editable = !note.editable'>Edit</button>
+    <app-notes-edit [note]='note' (updateNoteEvent)='update($event)' *ngIf='note.editable'></app-notes-edit>
+    <hr>
+  </div>
+</div>

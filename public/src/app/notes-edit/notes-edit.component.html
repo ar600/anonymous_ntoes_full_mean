@@ -1,0 +1,9 @@
+<!-- <button type="button" name="edit" (click)="update()">Edit</button> -->
+<h4>Edit Page</h4>
+
+<form class="note-edit" (submit)='update()'>
+  Note:
+  <input type="text" name="note" required minlength='3' [(ngModel)]='noteEdit.note' #note="ngModel">
+  <p *ngIf='!note.valid' [ngStyle]="{'color':'red'}">minimum 3 charactreers</p>
+  <input type="submit" value="Update">
+</form>

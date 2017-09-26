@@ -1,0 +1,8 @@
+<h1>App Component , Anynomous Notes </h1>
+{{notes | json}}
+<hr>
+<app-notes-add (createNewNoteEvent)="create($event)"></app-notes-add>
+<app-notes-list [notes]='notes'
+(destroyNoteEvent)="destroy($event)"
+(updateNoteEvent)='update($event)' ></app-notes-list>
+<hr>

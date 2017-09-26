@@ -1,0 +1,11 @@
+<h2>Note Add</h2>
+
+<form class="note-add" (submit)='create()'>
+  Note:
+  <input type="text" name="note" required minlength='3' [(ngModel)]='newNote.note' #note="ngModel">
+  <p *ngIf='!note.valid' [ngStyle]="{'color':'red'}">minimum 3 charactreers</p>
+  <input type="submit" *ngIf="note.valid"  name="submit" value="Add Note">
+</form>
+
+
+ <!-- *note='ngModel' -->
